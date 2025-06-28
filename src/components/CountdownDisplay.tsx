@@ -21,11 +21,7 @@ export function CountdownDisplay({ daysLeft, hoursLeft, minutesLeft, secondsLeft
 
   return (
     <div className="text-center">
-      <h1 className="text-4xl font-bold text-white font-orbitron mb-8 tracking-wider">
-        Until I get a chainsaw tattoo'd on my body
-      </h1>
-      
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center mb-8">
         <TimeUnit value={daysLeft} label="Days" />
         <div className="text-6xl font-bold text-red-500 font-orbitron mx-4">:</div>
         <TimeUnit value={hoursLeft} label="Hours" />
@@ -34,6 +30,10 @@ export function CountdownDisplay({ daysLeft, hoursLeft, minutesLeft, secondsLeft
         <div className="text-6xl font-bold text-red-500 font-orbitron mx-4">:</div>
         <TimeUnit value={secondsLeft} label="Seconds" />
       </div>
+      
+      <h1 className="text-4xl font-bold text-white font-orbitron tracking-wider">
+        Until I get a chainsaw tattoo'd on my body
+      </h1>
     </div>
   )
 } 
