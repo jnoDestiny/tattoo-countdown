@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Orbitron', monospace;
+  }
+}
+
+@layer components {
+  .background-overlay {
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Zoom-out effect with fade-in - starts zoomed in and slowly zooms out */
+.zoom-out {
+  animation: zoom-out 20s ease-out infinite;
+}
+
+@keyframes zoom-out {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-fade {
+  animation: fade 0.3s ease-out;
+} 
