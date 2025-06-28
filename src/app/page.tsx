@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { BackgroundSlider } from '@/components/BackgroundSlider'
 import { CountdownDisplay } from '@/components/CountdownDisplay'
+import { TARGET_DATE } from '@/config/countdown'
 
 export default function Home() {
   const [daysLeft, setDaysLeft] = useState(365)
@@ -12,14 +13,11 @@ export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [imageCount, setImageCount] = useState(1)
 
-  // Calculate time left until 365 days from now
+  // Calculate time left until target date
   useEffect(() => {
-    const targetDate = new Date()
-    targetDate.setDate(targetDate.getDate() + 365)
-    
     const calculateTimeLeft = () => {
       const now = new Date()
-      const timeDiff = targetDate.getTime() - now.getTime()
+      const timeDiff = TARGET_DATE.getTime() - now.getTime()
       
       if (timeDiff <= 0) {
         setDaysLeft(0)
